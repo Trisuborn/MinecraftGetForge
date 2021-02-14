@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\test.ui'
+# Form implementation generated from reading ui file './mgf_qt_ui/ui_xml/mgf_main.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.2
 #
@@ -14,11 +14,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(320, 240)
+        MainWindow.resize(600, 400)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(110, 110, 81, 16))
+        self.label.setGeometry(QtCore.QRect(250, 180, 81, 16))
         self.label.setObjectName("label")
         MainWindow.setCentralWidget(self.centralwidget)
 
