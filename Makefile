@@ -1,9 +1,15 @@
-# tools
-PYUIC 		= pyuic5.exe
-PYINSTALL	= pyinstaller.exe
 
-RM 			= rm
-MV 			= mv
+# tools
+ifeq ($(OS),Windows_NT)
+	PYUIC 		= pyuic5.exe
+	PYINSTALL	= pyinstaller.exe
+	RM 			= del
+else
+	PYUIC 		= pyuic5
+	PYINSTALL	= pyinstaller
+	RM 			= rm
+endif
+
 
 # Flags
 PYINSTALL_FLAGS = -Fw
@@ -22,5 +28,12 @@ pack:
 	$(PYINSTALL) $(PYINSTALL_FLAGS) $(PYINSTALL_FILES)
 
 clean:
-	rm -rf ./dist ./build ./main.spec ./__pycache__
-
+ifeq ($(OS),Windows_NT)
+	$(RM) /q /f /s dist
+	$(RM) /q /f /s __pycache__
+	$(RM) /q /f /s build
+	$(RM) /q /f /s main.spec
+	$(RM) .\mgf_qt_ui\ui_py\mgf_main.py
+else
+	$(RM) -rf ./dist ./build ./main.spec ./__pycache__ ./mgf_qt_ui/ui_py/mgf_main.py
+endif
