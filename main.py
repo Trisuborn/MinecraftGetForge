@@ -9,6 +9,7 @@ import mgf_qt_event.mgf_events as mgf_qt_events
 
 # main
 if __name__ == '__main__':
+
     app = QApplication(sys.argv)
     MainWindow = QMainWindow()
 
