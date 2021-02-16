@@ -7,6 +7,10 @@ import mgf_qt_ui.ui_py.mgf_main as mgf_qt_ui_main
 import mgf_qt_event.mgf_events as mgf_qt_events
 import mgf_web.mgf_web as mgf_web
 
+
+pro_url     = 'https://github.com/Trisuborn/MinecraftGetForge'
+pro_api_url = 'https://api.github.com/repos/Trisuborn/MinecraftGetForge'
+
 # main
 if __name__ == '__main__':
     app = QApplication(sys.argv)

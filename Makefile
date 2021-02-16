@@ -22,13 +22,15 @@ PYINSTALL_FILES += ./mgf_qt_ui/ui_py/$(MGF_MAIN).py
 # MGF_MAIN
 MGF_MAIN = mgf_main
 
-all: uic pack mv
-
+all: MinecraftGetForge.exe
+MinecraftGetForge.exe:MinecraftGetForge
+MinecraftGetForge: uic pack cp
 uic:
 	$(PYUIC) -o ./mgf_qt_ui/ui_py/$(MGF_MAIN).py ./mgf_qt_ui/ui_xml/$(MGF_MAIN).ui
 pack:
 	$(PYINSTALL) $(PYINSTALL_FLAGS) $(PYINSTALL_FILES)
-mv:
+cp:
+	cp ./dist/main.* ./MinecraftGetForge.
 
 clean:
 ifeq ($(OS),Windows_NT)
