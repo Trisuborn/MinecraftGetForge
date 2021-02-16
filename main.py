@@ -7,8 +7,16 @@ import mgf_qt_ui.ui_py.mgf_main as mgf_qt_ui_main
 import mgf_qt_event.mgf_events as mgf_qt_events
 
 
+from urllib.parse import urlparse
+
+url = 'https://blog.csdn.net/qq_28877125/article/details/81409748'
+
+
+
 # main
 if __name__ == '__main__':
+    dest_str = urlparse(url)
+    # print(dict(dest_str))
 
     app = QApplication(sys.argv)
     MainWindow = QMainWindow()

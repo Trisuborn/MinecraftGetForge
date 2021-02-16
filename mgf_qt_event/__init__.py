@@ -1,2 +1,2 @@
-__all__ = ['mgf_events']
-info = "mgf_qt_event"
+__all__ = ['mgf_web']
+info = "mgf_web"
