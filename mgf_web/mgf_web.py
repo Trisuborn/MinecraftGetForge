@@ -1,10 +1,15 @@
 import urllib.request as url_req
 import requests
 import os
+from PyQt5.QtCore import QThread
+
+pro_url     = 'https://github.com/Trisuborn/MinecraftGetForge'
+pro_git_url = 'https://github.com/Trisuborn/MinecraftGetForge.git'
+pro_api_url = 'https://api.github.com/repos/Trisuborn/MinecraftGetForge'
 
 class mgf_web_class(object):
     def __init__(self):
-        self.html_content = ''
+        super().__init__()
 
     def get_file_size(self, url, size_type = None):
         '''
@@ -46,17 +51,32 @@ class mgf_web_class(object):
             return size
         # elif (type == 'file'):
 
-
-
     def get_html(self, url = '', filename = '', save_path = '', save = True):
-        if (url == '' or save_path == ''):
-            print("params error.")
+        if (url == ''):
+            print("url error.")
             return None
-        if (save == True and filename == ''):
-            print("filename error.")
+        if (save == True and (filename == '' or save_path == '')):
+            print("params error.")
             return None
         url_resp = url_req.urlopen(url)
         if (save == True):
             return self.save_file(url_resp, 'html', filename, save_path)
+
+
+class updated_check(mgf_web_class, QThread):
+    def __init__(self):
+        super().__init__()
+        if (os.path.isfile('./version') == False):
+            with open('./version', 'wb+') as fs:
+                pass
+        with open('./version', 'r') as fs:
+            pro_ver = fs.read().encode('utf-8')
+        if (pro_ver == ''):
+            # 1
+            updated_at = requests.get(pro_api_url).json()['updated_at']
+            with open('./version', 'w', encoding='utf-8') as fs:
+                fs.write(updated_at.encode('utf-8'))
+        else:
+            pro_ver
 
 

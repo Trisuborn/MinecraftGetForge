@@ -37,7 +37,7 @@ class Ui_MainWindow(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.frame)
-        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(0, 10, 251, 51))
+        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(0, 10, 261, 51))
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
         self.gridLayout_3 = QtWidgets.QGridLayout(self.horizontalLayoutWidget_2)
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -182,12 +182,12 @@ class Ui_MainWindow(object):
         self.line_4.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_4.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_4.setObjectName("line_4")
-        self.comboBox = QtWidgets.QComboBox(self.frame)
-        self.comboBox.setGeometry(QtCore.QRect(530, 200, 101, 22))
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
+        self.progress_bar = QtWidgets.QProgressBar(self.frame)
+        self.progress_bar.setGeometry(QtCore.QRect(520, 250, 118, 23))
+        self.progress_bar.setProperty("value", 0)
+        self.progress_bar.setAlignment(QtCore.Qt.AlignCenter)
+        self.progress_bar.setTextDirection(QtWidgets.QProgressBar.TopToBottom)
+        self.progress_bar.setObjectName("progress_bar")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -196,7 +196,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MinecraftGetForge"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MinecraftGetForge--By Trisuborn"))
         MainWindow.setWhatsThis(_translate("MainWindow", "版本"))
         self.lineEdit_ver2.setInputMask(_translate("MainWindow", "00"))
         self.lineEdit_ver2.setText(_translate("MainWindow", "12"))
@@ -227,6 +227,3 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "已下载"))
         self.label_github.setText(_translate("MainWindow", "<a href=\"https://github.com/Trisuborn/MinecraftGetForge\">VER 4.0 GitHub地址</a>"))
         self.btn_download_1.setText(_translate("MainWindow", "下载当前版本最新（jar）"))
-        self.comboBox.setItemText(0, _translate("MainWindow", "新建项目"))
-        self.comboBox.setItemText(1, _translate("MainWindow", "新建项目"))
-        self.comboBox.setItemText(2, _translate("MainWindow", "新建项目"))
